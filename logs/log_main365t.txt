@@ -1,0 +1,54 @@
+cohort 133628 pos 571
+temporal_aware test2024 S 0.7746 0.0153 20s
+temporal_aware test2024 S+temporal 0.7844 0.0555 20s
+temporal_aware test2024 S+refs 0.7853 0.0168 18s
+temporal_aware test2024 S+update 0.7886 0.0223 18s
+temporal_aware test2024 S+enrich 0.9966 0.759 16s
+temporal_aware test2024 S+kevfield 0.9999 0.9683 17s
+temporal_aware test2024 S+all_C 0.9873 0.5186 18s
+temporal_naive test2024 S 0.8533 0.0551 27s
+temporal_naive test2024 S+temporal 0.8531 0.1124 28s
+temporal_naive test2024 S+refs 0.8798 0.1298 31s
+temporal_naive test2024 S+update 0.8733 0.1143 28s
+temporal_naive test2024 S+enrich 0.9999 0.9579 25s
+temporal_naive test2024 S+kevfield 0.9999 0.9678 25s
+temporal_naive test2024 S+all_C 0.9992 0.9182 27s
+temporal_aware test2025 S 0.8391 0.049 28s
+temporal_aware test2025 S+temporal 0.841 0.1296 28s
+temporal_aware test2025 S+refs 0.8506 0.0728 30s
+temporal_aware test2025 S+update 0.8464 0.0384 31s
+temporal_aware test2025 S+enrich 0.9999 0.9595 25s
+temporal_aware test2025 S+kevfield 0.9999 0.9682 24s
+temporal_aware test2025 S+all_C 0.9938 0.7159 26s
+temporal_naive test2025 S 0.9252 0.0897 47s
+temporal_naive test2025 S+temporal 0.9313 0.2095 47s
+temporal_naive test2025 S+refs 0.9224 0.0795 54s
+temporal_naive test2025 S+update 0.9512 0.0827 48s
+temporal_naive test2025 S+enrich 1.0 0.9913 37s
+temporal_naive test2025 S+kevfield 1.0 0.9873 37s
+temporal_naive test2025 S+all_C 1.0 0.9856 40s
+Traceback (most recent call last):
+  File "/home/claude/fresh/code/exp_main_t.py", line 33, in <module>
+    run('temporal_aware', f'test{Y}', aware, te); run('temporal_naive', f'test{Y}', naive, te)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/fresh/code/exp_main_t.py", line 20, in run
+    t0 = time.time(); f = Feat(g).fit(c.loc[tr]); Xtr = f.transform(c.loc[tr]); Xte = f.transform(c.loc[te])
+                                                                                      ~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/claude/fresh/code/kev_lib.py", line 48, in transform
+    parts = [sp.csr_matrix(self.sc.transform(self._num(d))), self.oh.transform(self._cats(d))]
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/sklearn/utils/_set_output.py", line 327, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/sklearn/preprocessing/_data.py", line 1111, in transform
+    X = validate_data(
+        self,
+    ...<6 lines>...
+        ensure_all_finite="allow-nan",
+    )
+  File "/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py", line 3041, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py", line 1113, in check_array
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: Found array with 0 sample(s) (shape=(0, 9)) while a minimum of 1 is required by StandardScaler.

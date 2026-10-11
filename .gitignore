@@ -1,0 +1,7 @@
+raw/*
+!raw/.gitkeep
+data/*.pkl
+__pycache__/
+*.aux
+*.log
+*.out
