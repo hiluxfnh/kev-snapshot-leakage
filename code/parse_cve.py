@@ -4,7 +4,7 @@ import json, os, sys, re, glob
 from multiprocessing import Pool
 from urllib.parse import urlparse
 import pandas as pd
-ROOT = sys.argv[1]; OUT = sys.argv[2]
+ROOT = sys.argv[1] if len(sys.argv) > 2 else None; OUT = sys.argv[2] if len(sys.argv) > 2 else None
 def dom(u):
     try: return urlparse(u).netloc.lower().removeprefix('www.')
     except Exception: return ''
@@ -15,6 +15,8 @@ def cvss(metrics, tag):
 def parse(path):
     try: r = json.load(open(path, encoding='utf8'))
     except Exception: return None
+    return parse_record(r)
+def parse_record(r):
     md = r.get('cveMetadata', {}); st = md.get('state')
     row = dict(cve=md.get('cveId'), state=st, assigner=md.get('assignerShortName'), reserved=md.get('dateReserved'),
                published=md.get('datePublished'), updated=md.get('dateUpdated'))

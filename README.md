@@ -23,3 +23,7 @@ The study asks which fields of a public CVE record carry information that did no
 
 ## License
 Code under MIT (see `LICENSE`). Source data keep the terms of their original publishers (see `docs/SOURCES.md`).
+
+## Second model and as-published records (added October 2026)
+
+The paper also reports a gradient boosting model (LightGBM) and a reconstruction of every cohort record as it was first committed to the CVE List repository (CVEs published from April 2023). The new scripts are `code/build_first_add.py`, `parse_hist.py`, `prep_hist.py`, `exp_hist.py`, `exp_gbm.py` and `gen_tables2.py`. Results are in `results/results_gbm_H90.jsonl`, `results/results_hist.jsonl` and `results/results_hist_desc.json`; the derived as-published table is `data/cohort_as_published_2023-04_to_2026-07_derived.csv.xz`. Steps to reproduce are in `docs/README_ADDENDUM.md`. The EuroS&P-format paper source is `paper/paper_eurosp.tex`.

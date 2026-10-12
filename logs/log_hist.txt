@@ -1,0 +1,122 @@
+cohort 148069 pos 469
+{
+"CISA kev block": {
+"snapshot": {
+"pos": 1.0,
+"neg": 0.0008875338753387534
+},
+"published": {
+"pos": 0.0,
+"neg": 0.0
+}
+},
+"SSVC exploitation present": {
+"snapshot": {
+"pos": 1.0,
+"neg": 0.9262533875338753
+},
+"published": {
+"pos": 0.0,
+"neg": 0.0
+}
+},
+"any ADP container": {
+"snapshot": {
+"pos": 1.0,
+"neg": 0.961470189701897
+},
+"published": {
+"pos": 0.0021321961620469083,
+"neg": 0.0008265582655826558
+}
+},
+"CVSS exploit maturity F/H": {
+"snapshot": {
+"pos": 0.14925373134328357,
+"neg": 0.0016598915989159892
+},
+"published": {
+"pos": 0.1279317697228145,
+"neg": 0.001592140921409214
+}
+},
+"in the wild in description": {
+"snapshot": {
+"pos": 0.04904051172707889,
+"neg": 0.0005487804878048781
+},
+"published": {
+"pos": 0.046908315565031986,
+"neg": 0.0005216802168021681
+}
+},
+"updated >30d after publication": {
+"snapshot": {
+"pos": 0.9466950959488273,
+"neg": 0.5885840108401084
+},
+"published": {
+"pos": 0.0,
+"neg": 0.0
+}
+},
+"vendor advisory tag": {
+"snapshot": {
+"pos": 0.3347547974413646,
+"neg": 0.13134823848238483
+},
+"published": {
+"pos": 0.31130063965884863,
+"neg": 0.12030487804878048
+}
+},
+"GitHub reference": {
+"snapshot": {
+"pos": 0.08955223880597014,
+"neg": 0.29392953929539295
+},
+"published": {
+"pos": 0.07462686567164178,
+"neg": 0.2912737127371274
+}
+}
+}
+{'description changed': 0.1307701139333689, 'title changed': 0.0444657558300522, 'CWE changed': 0.024441307768675414, 'CNA CVSS v3 vector changed': 0.06526686882466957, 'vendors changed': 0.02891894994901026, 'products changed': 0.044431987789476525, 'reference count changed': 0.08896527970068009} {'description changed': 0.2579957356076759, 'reference count changed': 0.2281449893390192, 'CNA CVSS v3 vector changed': 0.08955223880597014}
+lr 2024 S snap->snap 0.83 0.044
+lr 2024 S hist->hist 0.817 0.01
+lr 2024 S snap->hist 0.824 0.08
+lgbm 2024 S snap->snap 0.864 0.06
+lgbm 2024 S hist->hist 0.861 0.075
+lgbm 2024 S snap->hist 0.856 0.067
+lr 2024 S+temporal snap->snap 0.829 0.034
+lr 2024 S+temporal hist->hist 0.843 0.017
+lr 2024 S+temporal snap->hist 0.826 0.085
+lr 2024 S+refs snap->snap 0.839 0.047
+lr 2024 S+refs hist->hist 0.829 0.012
+lr 2024 S+refs snap->hist 0.834 0.079
+lr 2024 S+update snap->snap 0.841 0.053
+lr 2024 S+update hist->hist 0.817 0.01
+lr 2024 S+update snap->hist 0.804 0.049
+lr 2024 S+enrich snap->snap 0.999 0.689
+Traceback (most recent call last):
+  File "/home/claude/fresh2/code/exp_hist.py", line 47, in <module>
+    f = FF(g).fit(A.loc[tr]); Xtr = f.transform(A.loc[tr]); Xte = f.transform(B.loc[te])
+  File "/home/claude/fresh2/code/kev_lib.py", line 44, in fit
+    if 'C_enrich' in self.groups: self.cv['adp_names'] = _bin(d, 'adp_names', tok_space, 5)
+                                                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/fresh2/code/kev_lib.py", line 19, in _bin
+    return CountVectorizer(tokenizer=tok, lowercase=False, binary=True, min_df=min_df, token_pattern=None).fit(df[col].fillna('').astype(str))
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/sklearn/feature_extraction/text.py", line 1338, in fit
+    self.fit_transform(raw_documents)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/sklearn/feature_extraction/text.py", line 1387, in fit_transform
+    vocabulary, X = self._count_vocab(raw_documents, self.fixed_vocabulary_)
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/sklearn/feature_extraction/text.py", line 1293, in _count_vocab
+    raise ValueError(
+        "empty vocabulary; perhaps the documents only contain stop words"
+    )
+ValueError: empty vocabulary; perhaps the documents only contain stop words

@@ -1,0 +1,158 @@
+cohort 148069 pos 469
+{
+"CISA kev block": {
+"snapshot": {
+"pos": 1.0,
+"neg": 0.0008875338753387534
+},
+"published": {
+"pos": 0.0,
+"neg": 0.0
+}
+},
+"SSVC exploitation present": {
+"snapshot": {
+"pos": 1.0,
+"neg": 0.9262533875338753
+},
+"published": {
+"pos": 0.0,
+"neg": 0.0
+}
+},
+"any ADP container": {
+"snapshot": {
+"pos": 1.0,
+"neg": 0.961470189701897
+},
+"published": {
+"pos": 0.0021321961620469083,
+"neg": 0.0008265582655826558
+}
+},
+"CVSS exploit maturity F/H": {
+"snapshot": {
+"pos": 0.14925373134328357,
+"neg": 0.0016598915989159892
+},
+"published": {
+"pos": 0.1279317697228145,
+"neg": 0.001592140921409214
+}
+},
+"in the wild in description": {
+"snapshot": {
+"pos": 0.04904051172707889,
+"neg": 0.0005487804878048781
+},
+"published": {
+"pos": 0.046908315565031986,
+"neg": 0.0005216802168021681
+}
+},
+"updated >30d after publication": {
+"snapshot": {
+"pos": 0.9466950959488273,
+"neg": 0.5885840108401084
+},
+"published": {
+"pos": 0.0,
+"neg": 0.0
+}
+},
+"vendor advisory tag": {
+"snapshot": {
+"pos": 0.3347547974413646,
+"neg": 0.13134823848238483
+},
+"published": {
+"pos": 0.31130063965884863,
+"neg": 0.12030487804878048
+}
+},
+"GitHub reference": {
+"snapshot": {
+"pos": 0.08955223880597014,
+"neg": 0.29392953929539295
+},
+"published": {
+"pos": 0.07462686567164178,
+"neg": 0.2912737127371274
+}
+}
+}
+{'description changed': 0.1307701139333689, 'title changed': 0.0444657558300522, 'CWE changed': 0.024441307768675414, 'CNA CVSS v3 vector changed': 0.06526686882466957, 'vendors changed': 0.02891894994901026, 'products changed': 0.044431987789476525, 'reference count changed': 0.08896527970068009} {'description changed': 0.2579957356076759, 'reference count changed': 0.2281449893390192, 'CNA CVSS v3 vector changed': 0.08955223880597014}
+lr 2024 S+enrich hist->hist 0.829 0.013
+lr 2024 S+enrich snap->hist 0.694 0.013
+lgbm 2024 S+enrich snap->snap 0.999 0.782
+lgbm 2024 S+enrich hist->hist 0.861 0.075
+lgbm 2024 S+enrich snap->hist 0.835 0.066
+lr 2024 S+kevfield snap->snap 1.0 0.768
+lr 2024 S+kevfield hist->hist 0.817 0.01
+lr 2024 S+kevfield snap->hist 0.604 0.008
+lr 2024 S+all_C snap->snap 1.0 0.784
+lr 2024 S+all_C hist->hist 0.86 0.026
+lr 2024 S+all_C snap->hist 0.607 0.014
+lgbm 2024 S+all_C snap->snap 1.0 0.791
+lgbm 2024 S+all_C hist->hist 0.882 0.092
+lgbm 2024 S+all_C snap->hist 0.765 0.054
+lr 2025 S snap->snap 0.925 0.071
+lr 2025 S hist->hist 0.918 0.052
+lr 2025 S snap->hist 0.923 0.073
+lgbm 2025 S snap->snap 0.919 0.089
+lgbm 2025 S hist->hist 0.914 0.095
+lgbm 2025 S snap->hist 0.919 0.092
+lr 2025 S+temporal snap->snap 0.931 0.22
+lr 2025 S+temporal hist->hist 0.921 0.185
+lr 2025 S+temporal snap->hist 0.925 0.226
+lr 2025 S+refs snap->snap 0.924 0.071
+lr 2025 S+refs hist->hist 0.922 0.051
+lr 2025 S+refs snap->hist 0.921 0.06
+lr 2025 S+update snap->snap 0.935 0.086
+lr 2025 S+update hist->hist 0.918 0.052
+lr 2025 S+update snap->hist 0.911 0.034
+lr 2025 S+enrich snap->snap 1.0 0.845
+lr 2025 S+enrich hist->hist 0.915 0.051
+lr 2025 S+enrich snap->hist 0.773 0.017
+lgbm 2025 S+enrich snap->snap 1.0 0.867
+lgbm 2025 S+enrich hist->hist 0.914 0.095
+lgbm 2025 S+enrich snap->hist 0.781 0.024
+lr 2025 S+kevfield snap->snap 1.0 0.834
+lr 2025 S+kevfield hist->hist 0.918 0.052
+lr 2025 S+kevfield snap->hist 0.585 0.006
+lr 2025 S+all_C snap->snap 1.0 0.855
+lr 2025 S+all_C hist->hist 0.925 0.18
+lr 2025 S+all_C snap->hist 0.589 0.006
+lgbm 2025 S+all_C snap->snap 1.0 0.883
+lgbm 2025 S+all_C hist->hist 0.931 0.162
+lgbm 2025 S+all_C snap->hist 0.773 0.05
+lr 2026 S snap->snap 0.874 0.11
+lr 2026 S hist->hist 0.877 0.109
+lr 2026 S snap->hist 0.876 0.109
+lgbm 2026 S snap->snap 0.89 0.025
+lgbm 2026 S hist->hist 0.888 0.054
+lgbm 2026 S snap->hist 0.886 0.024
+lr 2026 S+temporal snap->snap 0.878 0.168
+lr 2026 S+temporal hist->hist 0.88 0.147
+lr 2026 S+temporal snap->hist 0.875 0.156
+lr 2026 S+refs snap->snap 0.887 0.105
+lr 2026 S+refs hist->hist 0.893 0.114
+lr 2026 S+refs snap->hist 0.888 0.109
+lr 2026 S+update snap->snap 0.924 0.098
+lr 2026 S+update hist->hist 0.877 0.109
+lr 2026 S+update snap->hist 0.855 0.07
+lr 2026 S+enrich snap->snap 1.0 0.919
+lr 2026 S+enrich hist->hist 0.877 0.109
+lr 2026 S+enrich snap->hist 0.735 0.009
+lgbm 2026 S+enrich snap->snap 1.0 0.945
+lgbm 2026 S+enrich hist->hist 0.888 0.054
+lgbm 2026 S+enrich snap->hist 0.852 0.059
+lr 2026 S+kevfield snap->snap 1.0 0.928
+lr 2026 S+kevfield hist->hist 0.877 0.109
+lr 2026 S+kevfield snap->hist 0.663 0.005
+lr 2026 S+all_C snap->snap 1.0 0.927
+lr 2026 S+all_C hist->hist 0.894 0.152
+lr 2026 S+all_C snap->hist 0.655 0.007
+lgbm 2026 S+all_C snap->snap 1.0 0.914
+lgbm 2026 S+all_C hist->hist 0.898 0.062
+lgbm 2026 S+all_C snap->hist 0.805 0.06

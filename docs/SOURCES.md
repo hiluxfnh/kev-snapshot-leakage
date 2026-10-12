@@ -18,3 +18,11 @@ The clones were shallow (`git clone --depth 1`), so cloning the latest commit gi
 (repeat for the other two).
 
 Licensing of the data follows each source: the CVE List is published under the CVE Program terms of use, and the CISA repositories are US government works. Check their pages before redistributing the derived table commercially.
+
+## Full history of cvelistV5 (for the as-published experiments)
+
+The as-published reconstruction needs the whole git history of CVEProject/cvelistV5, not a shallow clone:
+
+    git clone --filter=blob:none --no-checkout https://github.com/CVEProject/cvelistV5.git raw/cvelistV5
+
+then check out the pinned commit above for the snapshot, and see docs/README_ADDENDUM.md for the history steps.

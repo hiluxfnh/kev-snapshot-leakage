@@ -16,7 +16,8 @@ def tok_space(s): return s.split()
 def tok_bar(s): return [t.strip() for t in s.split('|') if t.strip()]
 
 def _bin(df, col, tok, min_df):
-    return CountVectorizer(tokenizer=tok, lowercase=False, binary=True, min_df=min_df, token_pattern=None).fit(df[col].fillna('').astype(str))
+    try: return CountVectorizer(tokenizer=tok, lowercase=False, binary=True, min_df=min_df, token_pattern=None).fit(df[col].fillna('').astype(str))
+    except ValueError: return CountVectorizer(vocabulary=['__none__'], tokenizer=tok, lowercase=False, binary=True, token_pattern=None)  # field empty in all training records
 
 class Feat:
     """Fit on a training frame only; transform any frame. groups: iterable of group names (always include 'S')."""
